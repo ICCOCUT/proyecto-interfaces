@@ -14,7 +14,7 @@ export default function historia() {
 					</p>
 				</div>
 				<Image
-					className='mx-auto max-w-full'
+					className='mx-auto max-w-full pb-6'
 					width={600}
 					height={400}
 					src='/img/nebula.webp'
