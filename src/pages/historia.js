@@ -6,7 +6,7 @@ export default function historia() {
 			<section className='text-gray-400 body-font'>
 				<div className='container mx-auto flex-wrap items-center justify-center py-12'>
 					<h1 className='text-4xl font-medium text-gray-800 mb-4 text-center'>
-						Historia de NebulaGhost
+						Historia de NebulaGhost.
 					</h1>
 					<p className='text-lg leading-relaxed mb-8 text-center'>
 						Descubre cómo comenzó NebulaGhost y su evolución a lo largo de los
@@ -17,7 +17,7 @@ export default function historia() {
 					className='mx-auto max-w-full'
 					width={600}
 					height={400}
-					src='/img/herramientas.jpg'
+					src='/img/nebula.webp'
 					alt='Imagen de Herramientas NebulaGhost'
 				/>
 			</section>
