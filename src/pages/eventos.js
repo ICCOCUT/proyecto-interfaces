@@ -30,7 +30,123 @@ const Eventos = () => {
 			link: '/enlace-al-evento-de-lanzamiento',
 			category: 'Lanzamiento', // Esta propiedad indica la categoría del evento
 		},
-		// Puedes agregar más eventos siguiendo el mismo formato
+		{
+			title: 'Taller de Desarrollo de Extensiones',
+			date: '15 de Abril, 2023',
+			description:
+				'Aprende Link desarrollar extensiones para NebulaGhost con la ayuda de nuestros expertos en este taller práctico.',
+			image: '/img/taller.jpg',
+			link: '/enlace-al-evento-de-lanzamiento',
+			category: 'Lanzamiento', // Esta propiedad indica la categoría del evento
+		},
+		{
+			title: 'Hackathon de NebulaGhost',
+			date: '10 de junio',
+			description:
+				'Participa en nuestro emocionante Hackathon y compite con otrosdesarrolladores para crear proyectos asombrosos enNebulaGhost.',
+			image: '/img/hackaton.png',
+			link: '/enlace-al-evento-de-lanzamiento',
+			category: 'Lanzamiento', // Esta propiedad indica la categoría del evento
+		},
+		{
+			title: 'Conferencias de Desarrolladores',
+			date: 'Anuales',
+			description: 'Conferencias que incluyen charlas técnicas, paneles de discusión y oportunidades de networking para la comunidad de desarrolladores de NebulaGhost.',
+			image: '/img/team.jpg',
+			link: '/enlace-a-las-conferencias',
+			category: 'Conferencias',
+		},
+		{
+			title: 'Charlas en Universidades y Escuelas',
+			date: 'Programadas según disponibilidad',
+			description: 'Presentaciones y charlas informativas sobre NebulaGhost en instituciones educativas, dirigidas a estudiantes y profesores interesados en aprender y enseñar el lenguaje.',
+			image: '/img/taller.jpg',
+			link: '/enlace-a-las-charlas',
+			category: 'Educación',
+		},
+		{
+			title: 'Webinars de Formación',
+			date: 'Programados regularmente',
+			description: 'Sesiones en línea de formación y tutoriales en tiempo real que cubren diversos aspectos de NebulaGhost, incluyendo ejemplos prácticos y Q&A en vivo.',
+			image: '/img/kevin.jpg',
+			link: '/enlace-a-los-webinars',
+			category: 'Educación',
+		},
+		{
+			title: 'Meetups de Comunidad',
+			date: 'Programadas por grupos de la comunidad',
+			description: 'Encuentros locales y en línea organizados por la comunidad de NebulaGhost, donde los entusiastas y desarrolladores se reúnen para discutir proyectos, compartir conocimientos y establecer contactos.',
+			image: '/img/nebula.webp',
+			link: '/enlace-a-los-meetups',
+			category: 'Comunidad',
+		},
+		{
+			title: 'Colaboración Abierta y Sprints de Desarrollo',
+			date: 'Programados por la comunidad',
+			description: 'Eventos en línea donde los contribuyentes pueden colaborar en el desarrollo de NebulaGhost, solucionar problemas y agregar nuevas características al lenguaje.',
+			image: '/img/nebula.jpg',
+			link: '/enlace-a-la-colaboracion',
+			category: 'Colaboración',
+		},
+		{
+			title: 'Conferencias Técnicas Especializadas',
+			date: 'Programadas según disponibilidad',
+			description: 'Eventos específicos sobre temas técnicos relacionados con NebulaGhost, como seguridad, desarrollo de extensiones, optimización y más.',
+			image: '/img/team.jpg',
+			link: '/enlace-a-las-conferencias-tecnicas',
+			category: 'Conferencias',
+		},
+		{
+			title: 'NebulaGhost DevCon',
+			date: 'Anualmente en el cuarto trimestre',
+			description: 'Una conferencia anual para desarrolladores de NebulaGhost que se centra en compartir conocimientos técnicos, discutir tendencias emergentes y explorar casos de uso avanzados. Incluye sesiones magistrales, talleres y oportunidades de networking.',
+			image: '/img/negro.webp',
+			link: '/enlace-a-devcon',
+			category: 'Conferencias',
+		},
+		{
+			title: 'NebulaGhost Game Jam',
+			date: 'Varias ediciones a lo largo del año',
+			description: 'Un evento de desarrollo de videojuegos en el que los participantes tienen un tiempo limitado (por ejemplo, 48 horas) para crear juegos utilizando NebulaGhost. Los juegos terminados se evalúan y premian al final del evento.',
+			image: '/img/lenguajeprogramacionvideojuegos1.webp',
+			link: '/enlace-a-game-jam',
+			category: 'Desarrollo de Juegos',
+		},
+		{
+			title: 'NebulaGhost Unconference',
+			date: 'Programado ocasionalmente por la comunidad',
+			description: 'Un evento no estructurado donde los participantes eligen los temas de discusión y las sesiones de forma colaborativa. Los asistentes tienen la oportunidad de explorar temas específicos y trabajar en proyectos conjuntos.',
+			image: '/img/steve-jobs-era-el-idolo-de-la-infancia-del-creador-de-chatgpt.webp',
+			link: '/enlace-a-unconference',
+			category: 'Comunidad',
+		},
+		{
+			title: 'NebulaGhost Code Fest',
+			date: 'Anualmente en primavera',
+			description: 'Un festival de código que celebra la creatividad y la innovación en NebulaGhost. Los participantes colaboran en proyectos, comparten ideas y compiten en desafíos de codificación.',
+			image: '/img/web_summit_cover.webp',
+			link: '/enlace-a-code-fest',
+			category: 'Competición',
+		},
+		{
+			title: 'NebulaGhost Web Development Summit',
+			date: 'Serie de eventos a lo largo del año',
+			description: 'Una serie de eventos enfocados en el desarrollo web con NebulaGhost. Incluye sesiones sobre desarrollo frontend, backend, y mejores prácticas para crear aplicaciones web con el lenguaje.',
+			image: '/img/SLIIT-CODEFEST-Software-Competition-Sschool-cat-4.webp',
+			link: '/enlace-a-web-dev-summit',
+			category: 'Desarrollo Web',
+		},
+		{
+			title: 'NebulaGhost AI Expo',
+			date: 'Bianualmente',
+			description: 'Una exposición que destaca el uso de NebulaGhost en aplicaciones de inteligencia artificial. Incluye charlas sobre implementaciones de IA, casos de estudio y demostraciones prácticas.',
+			image: '/img/375_142.webp',
+			link: '/enlace-a-ai-expo',
+			category: 'Inteligencia Artificial',
+		}
+
+
+
 	];
 
 	const toggleCategory = category => {
