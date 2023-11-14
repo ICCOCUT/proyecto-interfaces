@@ -17,7 +17,7 @@ export default function historia() {
 					className='mx-auto max-w-full'
 					width={600}
 					height={400}
-					src='/img/herramientas.jpg'
+					src='/img/nebula.webp'
 					alt='Imagen de Herramientas NebulaGhost'
 				/>
 			</section>
