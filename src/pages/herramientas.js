@@ -6,7 +6,7 @@ export default function herramientas() {
 		<main>
 			<section className='text-gray-400 body-font'>
 				<div className='container mx-auto flex-wrap items-center justify-center py-12'>
-					<h1 className='text-4xl font-medium text-white mb-4 text-center'>
+					<h1 className='text-4xl font-medium text-gray-800 mb-4 text-center'>
 						Herramientas de NebulaGhost
 					</h1>
 					<p className='text-lg leading-relaxed mb-8 text-center'>
