@@ -173,18 +173,19 @@ const Eventos = () => {
 			<div className='container mx-auto px-4'>
 				<div className='mb-4 text-center'>
 					<p>Filtrar por categoría:</p>
-					{categories.map(category => (
-						<button
-							key={category}
-							className={`mr-2 p-2 rounded-lg ${
-								selectedCategories.includes(category)
-									? 'bg-indigo-500 text-white'
-									: 'bg-gray-500 text-gray-100'
-							}`}
-							onClick={() => toggleCategory(category)}>
-							{category}
-						</button>
-					))}
+					<form>
+						{categories.map(category => (
+							<label key={category} className='mr-2 inline-flex items-center'>
+								<input
+									type='checkbox'
+									className='form-checkbox h-5 w-5 text-indigo-500 accent-green-300'
+									checked={selectedCategories.includes(category)}
+									onChange={() => toggleCategory(category)}
+								/>
+								<span className='ml-2 text-gray-800'>{category}</span>
+							</label>
+						))}
+					</form>
 				</div>
 
 				{eventosData
