@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Eventos = () => {
 	const [selectedCategories, setSelectedCategories] = useState([]);
-
+	const [searchTerm, setSearchTerm] = useState('');
 	const categories = ['Lanzamiento', 'Taller', 'Hackathon', 'Talleres'];
 
 	const eventosData = [
@@ -146,6 +146,45 @@ const Eventos = () => {
 		},
 	];
 
+	const filteredEventos = eventosData.filter(evento => {
+		const categoryMatch =
+			selectedCategories.length === 0 ||
+			selectedCategories.includes(evento.category);
+
+		const searchMatch =
+			searchTerm === '' ||
+			evento.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+			evento.description.toLowerCase().includes(searchTerm.toLowerCase());
+
+		return categoryMatch && searchMatch;
+	});
+
+	function eventoMatchesSearch(evento) {
+		const searchMatch =
+			searchTerm === '' ||
+			evento.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+			evento.description.toLowerCase().includes(searchTerm.toLowerCase());
+
+		return searchMatch;
+	}
+
+	function resaltarPalabraBuscada(texto) {
+		if (searchTerm === '') {
+			return texto;
+		}
+
+		const expresionRegular = new RegExp(`(${searchTerm})`, 'gi');
+		return texto.split(expresionRegular).map((fragmento, index) =>
+			expresionRegular.test(fragmento) ? (
+				<span key={index} className='bg-yellow-100'>
+					{fragmento}
+				</span>
+			) : (
+				<span key={index}>{fragmento}</span>
+			),
+		);
+	}
+
 	const toggleCategory = category => {
 		if (selectedCategories.includes(category)) {
 			setSelectedCategories(prevCategories =>
@@ -167,56 +206,77 @@ const Eventos = () => {
 						Descubre nuestros próximos eventos y mantente actualizado con lo que
 						está sucediendo en NebulaGhost.
 					</p>
+
+					<div className='mb-4 text-center'>
+						<p>Filtrar por categoría:</p>
+						<form>
+							{categories.map(category => (
+								<label key={category} className='mr-2 inline-flex items-center'>
+									<input
+										type='checkbox'
+										className='form-checkbox h-5 w-5 text-indigo-500 accent-green-300'
+										checked={selectedCategories.includes(category)}
+										onChange={() => toggleCategory(category)}
+									/>
+									<span className='ml-2 text-gray-200'>{category}</span>
+								</label>
+							))}
+						</form>
+					</div>
+
+					<div className='mb-4 text-center'>
+						<label className='inline-flex items-center'>
+							<span className='text-gray-200 mr-2'>Buscar:</span>
+							<input
+								type='text'
+								value={searchTerm}
+								onChange={e => setSearchTerm(e.target.value)}
+								className='border border-gray-300 p-2 rounded-md'
+							/>
+						</label>
+					</div>
 				</div>
 			</section>
 
 			<div className='container mx-auto px-4'>
-				<div className='mb-4 text-center'>
-					<p>Filtrar por categoría:</p>
-					<form>
-						{categories.map(category => (
-							<label key={category} className='mr-2 inline-flex items-center'>
-								<input
-									type='checkbox'
-									className='form-checkbox h-5 w-5 text-indigo-500 accent-green-300'
-									checked={selectedCategories.includes(category)}
-									onChange={() => toggleCategory(category)}
-								/>
-								<span className='ml-2 text-gray-800'>{category}</span>
-							</label>
-						))}
-					</form>
-				</div>
-
-				{eventosData
-					.filter(evento =>
-						selectedCategories.length === 0
-							? true
-							: selectedCategories.includes(evento.category),
-					)
-					.map((evento, index) => (
-						<div key={index} className='mb-8 flex flex-wrap'>
-							<div className='w-full md:w-1/2 md:pr-4'>
-								<Image
-									src={evento.image}
-									width={600}
-									height={400}
-									alt={evento.title}
-									className=' w-full h-64 mb-4 rounded-lg'
-								/>
-							</div>
-							<div className='w-full md:w-1/2'>
-								<h2 className='text-3xl font-medium mb-2'>{evento.title}</h2>
-								<p className='text-gray-500 mb-2'>{evento.date}</p>
-								<p className='text-lg'>{evento.description}</p>
-								<Link
-									href={evento.link}
-									className='text-indigo-500 hover:underline'>
-									Leer más
-								</Link>
-							</div>
+				{filteredEventos.map((evento, index) => (
+					<div key={index} className='mb-8 mt-8 flex flex-wrap'>
+						<div className='w-full md:w-1/2 md:pr-4'>
+							<Image
+								src={evento.image}
+								width={600}
+								height={400}
+								alt={evento.title}
+								className='w-full h-64 mb-4 rounded-lg'
+							/>
 						</div>
-					))}
+						<div className='w-full md:w-1/2'>
+							<h2 className='text-3xl font-medium mb-2'>
+								{resaltarPalabraBuscada(evento.title)}
+							</h2>
+							<p className='text-gray-500 mb-2'>
+								{resaltarPalabraBuscada(evento.description)}
+							</p>
+							<p className='text-lg'>
+								{eventoMatchesSearch(evento)
+									? resaltarPalabraBuscada(evento.description)
+									: evento.description}
+							</p>
+							<Link
+								href={evento.link}
+								className='text-indigo-500 hover:underline'>
+								Leer más
+							</Link>
+						</div>
+					</div>
+				))}
+			</div>
+			<div className='container mx-auto px-4 h-96 flex items-center justify-center'>
+				{filteredEventos.length === 0 ? (
+					<p className='text-lg text-center text-gray-500'>
+						No se encontraron eventos que coincidan con la búsqueda.
+					</p>
+				) : null}
 			</div>
 		</main>
 	);
