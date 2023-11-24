@@ -18,17 +18,6 @@ function Header() {
 					</svg>
 					<span className='ml-3 text-white'>NebulaGhost</span>
 				</Link>
-				<div className='relative mx-auto text-white'>
-					<input
-						className='border-2 border-gray-700 bg-gray-600 h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none'
-						type='search'
-						name='search'
-						placeholder='Buscar'
-					/>
-					<button type='submit' className='absolute right-0 top-0 mt-3 mr-4'>
-						<i className='fas fa-search text-gray-400 h-4 w-4'></i>
-					</button>
-				</div>
 				<nav className='md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center'>
 					<Link
 						href='/aprende'

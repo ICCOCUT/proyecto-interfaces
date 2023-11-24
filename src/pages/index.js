@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Nebulosa from './components/Nebulosa';
+import Link from 'next/link';
 
 export default function Home() {
 	return (
@@ -24,11 +24,11 @@ export default function Home() {
 							software. Únete a una comunidad global de desarrolladores y
 							exploradores espaciales.
 						</p>
-						<a
-							href='#registrate'
+						<Link
+							href='https://github.com/Sisitemas-Inteligentes/Sistemas'
 							className='bg-indigo-500 hover:bg-indigo-600 text-white font-medium py-2 px-6 rounded-full text-lg transition duration-300'>
-							Regístrate
-						</a>
+							Ver Repositorio
+						</Link>
 					</div>
 				</div>
 			</section>
